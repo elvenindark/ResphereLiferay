@@ -1,0 +1,18 @@
+package com.resphere.view.evento;
+
+import java.util.List;
+
+import javax.portlet.RenderRequest;
+
+import com.resphere.server.model.Evento;
+
+public class Util {
+
+	public Util(){
+		
+	}
+	public List<Evento> getEventos(RenderRequest renderRequest){
+		
+		return null;
+	}
+}

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/2/Resphere-Liferay-portlet
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3/Resphere-Liferay-portlet/build.xml
+END
+.tern-project
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/6/Resphere-Liferay-portlet/.tern-project
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3/Resphere-Liferay-portlet/.project
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/6/Resphere-Liferay-portlet/.classpath
+END

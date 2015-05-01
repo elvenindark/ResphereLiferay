@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
+  	<portlet>
+		<portlet-name>list-eventos</portlet-name>
+		<display-name>Last Eventos</display-name>
+		<portlet-class>
+			com.resphere.view.evento.ListEventosPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/listeventos/view.jsp</value>
+		</init-param>
+		<init-param>
+            <name>add-process-action-success-action</name>
+            <value>false</value>
+ 		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>List Eventos</title>
+			<short-title>Last Eventos</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-publishing-event>
+			<qname xmlns:x="http://liferay.com/events">x:ipc.pitch</qname>
+		</supported-publishing-event>
+		<supported-public-render-parameter>
+			eventoid
+		</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>evento-detail</portlet-name>
+		<display-name>Evento en detalle</display-name>
+		<portlet-class>
+			com.resphere.view.evento.EventoDetail
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/eventodetail/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>print-template</name>
+			<value>/html/eventodetail/print.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>print</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Evento Detail</title>
+			<short-title>Evento en detalle</short-title>
+			<keywords></keywords>
+		</portlet-info>		
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>		
+		<supported-processing-event>
+			<qname xmlns:x="http://liferay.com/events">x:ipc.pitch</qname>
+		</supported-processing-event>
+        <supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch1</qname>
+        </supported-processing-event>		
+	</portlet>	
+	<portlet>
+		<portlet-name>mapa</portlet-name>
+		<display-name>Mapa de eventos</display-name>
+		<portlet-class>
+			com.resphere.view.evento.MapaPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/mapa/view.jsp</value>
+		</init-param>
+        <init-param>
+            <name>add-process-action-success-action</name>
+            <value>false</value>
+        </init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Mapa</title>
+			<short-title>Mapa</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-publishing-event>
+			<qname xmlns:x="http://liferay.com/events">x:ipc.pitch1</qname>
+		</supported-publishing-event>
+        <supported-public-render-parameter>eventoid</supported-public-render-parameter>
+	</portlet>
+	<portlet>
+		<portlet-name>mapa-portlet2</portlet-name>
+		<display-name>Mapa Portlet2</display-name>
+		<portlet-class>
+			com.resphere.view.evento.MapaPortlet2
+		</portlet-class>		
+		<init-param>
+			<name>view-template</name>
+			<value>/html/mapaportlet2/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Mapa Portlet2</title>
+			<short-title>Mapa Portlet2</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>ubicacion</portlet-name>
+		<display-name>Ubicacion</display-name>
+		<portlet-class>
+			com.resphere.view.evento.UbicacionPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/ubicacion/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Ubicacion</title>
+			<short-title>Ubicacion</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+        <supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch2</qname>
+        </supported-processing-event>
+		<supported-publishing-event>
+			<qname xmlns:x="http://liferay.com/events">x:ipc.pitch2</qname>
+		</supported-publishing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>respuesta-agua</portlet-name>
+		<display-name>Respuesta Agua</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.respuesta.RespuestaAgua
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/respuestaagua/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Respuesta Agua</title>
+			<short-title>Respuesta Agua</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch1</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch2</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
+	
+	<public-render-parameter>
+			<identifier>eventoid</identifier> <qname xmlns:x="http://liferay.com/eventoid">x:eventoid</qname>
+		</public-render-parameter>
+
+
+</portlet-app>
