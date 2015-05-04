@@ -1,4 +1,4 @@
-package com.resphere.view.evento;
+package com.resphere.view.portlet.evento;
 
 import java.io.IOException;
 
