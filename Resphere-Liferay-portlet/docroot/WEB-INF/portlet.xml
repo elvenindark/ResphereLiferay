@@ -5,7 +5,7 @@
 		<portlet-name>list-eventos</portlet-name>
 		<display-name>Last Eventos</display-name>
 		<portlet-class>
-			com.resphere.view.evento.ListEventosPortlet
+			com.resphere.view.portlet.evento.ListEventosPortlet
 		</portlet-class>
 		<init-param>
 			<name>view-template</name>
@@ -48,7 +48,7 @@
 		<portlet-name>evento-detail</portlet-name>
 		<display-name>Evento en detalle</display-name>
 		<portlet-class>
-			com.resphere.view.evento.EventoDetail
+			com.resphere.view.portlet.evento.EventoDetail
 		</portlet-class>
 		<init-param>
 			<name>view-template</name>
@@ -86,13 +86,13 @@
 		</supported-processing-event>
         <supported-processing-event>
             <qname xmlns:x="http://liferay.com/events">x:ipc.pitch1</qname>
-        </supported-processing-event>		
+        </supported-processing-event>        		
 	</portlet>	
 	<portlet>
 		<portlet-name>mapa</portlet-name>
 		<display-name>Mapa de eventos</display-name>
 		<portlet-class>
-			com.resphere.view.evento.MapaPortlet
+			com.resphere.view.portlet.evento.MapaPortlet
 		</portlet-class>
 		<init-param>
 			<name>view-template</name>
@@ -133,7 +133,7 @@
 		<portlet-name>mapa-portlet2</portlet-name>
 		<display-name>Mapa Portlet2</display-name>
 		<portlet-class>
-			com.resphere.view.evento.MapaPortlet2
+			com.resphere.view.portlet.evento.MapaPortlet2
 		</portlet-class>		
 		<init-param>
 			<name>view-template</name>
@@ -166,7 +166,7 @@
 		<portlet-name>ubicacion</portlet-name>
 		<display-name>Ubicacion</display-name>
 		<portlet-class>
-			com.resphere.view.evento.UbicacionPortlet
+			com.resphere.view.portlet.evento.UbicacionPortlet
 		</portlet-class>
 		<init-param>
 			<name>view-template</name>
@@ -418,6 +418,42 @@
 			<role-name>user</role-name>
 		</security-role-ref>
 	</portlet>
+	<portlet>
+		<portlet-name>poblacion</portlet-name>
+		<display-name>Poblacion</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.PoblacionPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/poblacion/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Poblacion</title>
+			<short-title>Poblacion</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch3</qname>
+        </supported-processing-event>
+	</portlet>
 	<event-definition>
 		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch</qname>
 		<value-type>java.lang.String</value-type>
@@ -430,11 +466,13 @@
 		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch2</qname>
 		<value-type>java.lang.String</value-type>
 	</event-definition>
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch3</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
 	
 	<public-render-parameter>
 			<identifier>eventoid</identifier> <qname xmlns:x="http://liferay.com/eventoid">x:eventoid</qname>
 		</public-render-parameter>
-
-
 
 </portlet-app>

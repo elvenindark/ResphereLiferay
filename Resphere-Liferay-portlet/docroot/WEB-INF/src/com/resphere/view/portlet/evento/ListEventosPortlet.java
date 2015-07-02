@@ -32,7 +32,7 @@ public class ListEventosPortlet extends MVCPortlet {
 	//Default Render Method.
 	@Override
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
-		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.ubicacion";
+		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.ubicacion";
 		UbicacionFacadeREST servicio = new UbicacionFacadeREST(Ubicacion.class, url);
 		List<Ubicacion> ubicaciones = servicio.getAll();
 		_log.error("ubicaciones are> " + ubicaciones.get(2).getLatitud());
@@ -50,6 +50,7 @@ public class ListEventosPortlet extends MVCPortlet {
 		actionRequest.getPortletSession().setAttribute("userName", user);
 	}
 
+	//"Dispara" el evento y envia el id
 	public void viewDetails(ActionRequest request, ActionResponse response){
 		String id = null;
 		id = (String)request.getParameter("search");
@@ -58,6 +59,8 @@ public class ListEventosPortlet extends MVCPortlet {
 		response.setEvent(qName, id);
 		QName qName2 = new QName("http://liferay.com/events","ipc.pitch2");		
 		response.setEvent(qName2, id);
+		QName qName3 = new QName("http://liferay.com/events","ipc.pitch3");		
+		response.setEvent(qName3, id);
 		
 		try {
 			response.sendRedirect("/web/resphere/evaluacion");

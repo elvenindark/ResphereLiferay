@@ -41,7 +41,7 @@ public class UbicacionPortlet extends MVCPortlet {
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {	
 		renderRequest.setAttribute("idevento", id);
 		if(this.id != null){
-			String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.ubicacion";
+			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.ubicacion";
 			UbicacionFacadeREST servicio = new UbicacionFacadeREST(Ubicacion.class, url);
 			Ubicacion ubicacion = new Ubicacion();
 			ubicacion = servicio.get(id);

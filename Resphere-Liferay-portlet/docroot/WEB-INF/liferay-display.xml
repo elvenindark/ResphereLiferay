@@ -9,7 +9,8 @@
 		<portlet id="list-eventos"></portlet>
 		<portlet id="evento-detail"></portlet>
 		<portlet id="mapa"></portlet>
-		<portlet id="mapa-portlet2"></portlet>		
+		<portlet id="mapa-portlet2"></portlet>
+		<portlet id="poblacion"></portlet>
 	</category>
 	<category name="Respuesta">
 		<portlet id="respuesta"></portlet>

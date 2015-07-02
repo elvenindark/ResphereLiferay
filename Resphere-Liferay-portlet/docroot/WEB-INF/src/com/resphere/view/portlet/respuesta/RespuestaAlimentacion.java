@@ -42,7 +42,7 @@ public class RespuestaAlimentacion extends MVCPortlet {
 		String request, request1;
 		request = renderRequest.getParameter("jspPage");
 		request1 = ParamUtil.getString(renderRequest, "jspPage");
-		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.eventosv";
+		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.eventosv";
 		EventosvFacadeREST servicio = new EventosvFacadeREST(Eventosv.class, url);
 		List<Eventosv> ubicaciones = servicio.getAll();
 		if(request!=null && request1!=null)
@@ -57,7 +57,7 @@ public class RespuestaAlimentacion extends MVCPortlet {
 	public void doEdit(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException{
 		String request;
 		request = renderRequest.getParameter("jspPage");
-		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.eventosv";
+		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.eventosv";
 		EventosvFacadeREST servicio = new EventosvFacadeREST(Eventosv.class, url);
 		List<Eventosv> ubicaciones = servicio.getAll();
 		if(request!=null)
@@ -102,7 +102,7 @@ public class RespuestaAlimentacion extends MVCPortlet {
 			respuesta.setIdevento(fidevento);
 			respuesta.setIdindicadorclave(fhid);
 			respuesta.setObservacion(fcantidad);
-			String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.respuestahumanitaria";
+			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.respuestahumanitaria";
 			RespuestahumanitariaFacadeREST servicio = new RespuestahumanitariaFacadeREST(Respuestahumanitaria.class, url);
 			if(servicio!=null)
 				try {
@@ -129,9 +129,9 @@ public class RespuestaAlimentacion extends MVCPortlet {
 		else
 			_log.error("problems in action");
 	
-		String urlnm = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.normaminima";
-		String urlne = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.normaesencial";
-		String urlic = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.indicadorclave";		
+		String urlnm = "http://localhost:8080/respherers/webresources/com.resphere.server.model.normaminima";
+		String urlne = "http://localhost:8080/respherers/webresources/com.resphere.server.model.normaesencial";
+		String urlic = "http://localhost:8080/respherers/webresources/com.resphere.server.model.indicadorclave";		
 		
 		NMinimaFacadeREST servicionm = new NMinimaFacadeREST(Normaminima.class, urlnm);
 		List<Normaminima> nminimas = servicionm.getAllByIdSH("2");

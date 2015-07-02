@@ -34,6 +34,7 @@
 <%@ page import="com.resphere.server.model.Normaminima" %>
 <%@ page import="com.resphere.server.model.Normaesencial" %>
 <%@ page import="com.resphere.server.model.Indicadorclave" %>
+<%@ page import="com.resphere.server.model.Poblacion" %>
 
 
 <liferay-theme:defineObjects/>

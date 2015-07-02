@@ -25,7 +25,7 @@ public class MapaPortlet extends MVCPortlet {
 	private static Log _log = LogFactory.getLog(ListEventosPortlet.class);
 	@Override
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
-		String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.ubicacion";
+		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.ubicacion";
 		UbicacionFacadeREST servicio = new UbicacionFacadeREST(Ubicacion.class, url);
 		List<Ubicacion> ubicaciones = servicio.getAll();
 		//_log.error("eventos size is> " + eventos.get(1).getIdevento());

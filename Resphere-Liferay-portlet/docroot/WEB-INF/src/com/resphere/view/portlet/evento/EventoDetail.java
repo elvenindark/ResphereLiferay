@@ -53,7 +53,7 @@ public class EventoDetail extends MVCPortlet {
 		public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {	
 			renderRequest.setAttribute("idevento", id);
 			if(this.id != null){
-				String url = "http://hp-hp:8080/respherers/webresources/com.resphere.server.model.evento";
+				String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.evento";
 				EventoFacadeREST servicio = new EventoFacadeREST(Evento.class, url);
 				Evento evento = new Evento();
 				evento = servicio.get(id);

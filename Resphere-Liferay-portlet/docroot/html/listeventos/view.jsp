@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
-<%@ include file="/html/listeventos/init.jsp" %>
+<%@ include file="/html/init.jsp" %>
 
 <liferay-ui:search-container emptyResultsMessage="No existen eventos" delta="5">	
 	<liferay-ui:search-container-results>

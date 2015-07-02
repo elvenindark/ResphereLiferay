@@ -51,10 +51,10 @@
 					 	<div class="formresponse" id="<%=tg%>">
 					 		<p class="header toggler-header-collapsed"><span>+  </span><%=iclaves.get(k).get(i).getIndicadorclave() %></p>
 					 			<p class="content toggler-content-collapsed">									
-										<input type="checkbox" name="aplica" label="aplica" id="idaplica"> aplica</input>
-										<input type = "hidden" name = "idiclave" value = "<%=idform %>" id="fhid"></input>
-										<input type = "hidden" name = "idevento" value = "<%=idevento %>" id="idevento"></input>
-										<textarea name="cantidad" label="" cols="120" rows="2"  id="idcantidad" class="idaplica"> </textarea>		
+										<input type="checkbox" name="<portlet:namespace />aplica" label="aplica" id="idaplica"> aplica</input>
+										<input type = "hidden" name = "<portlet:namespace />idiclave" value = "<%=idform %>" id="fhid"></input>
+										<input type = "hidden" name = "<portlet:namespace />idevento" value = "<%=idevento %>" id="idevento"></input>
+										<textarea name="<portlet:namespace />cantidad" label="" cols="120" rows="2"  id="idcantidad" class="idaplica"> </textarea>		
 										<button type= "submit" label="Agregar">Guardar</button>											
 								</p>
 							</div>
@@ -190,7 +190,7 @@
 
 </script> 
  <!-- 
-<aui:script use="aui-io-request,aui-node">
+<aui:script use="aui-io-request-deprecated,aui-node">
 	Liferay.provide(window,'guardarrespuesta', function(name) {
 		var A = AUI();		
 		var idform = '<portlet:namespace />fm';
