@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN" "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
 
-<liferay-portlet-app>
-	
+<liferay-portlet-app>	
 	<portlet>
 		<portlet-name>list-eventos</portlet-name>
 		<icon>/icon.png</icon>
@@ -107,6 +106,69 @@
 			/js/main.js
 		</footer-portlet-javascript>
 		<css-class-wrapper>poblacion-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>medios</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>medios-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>vivienda</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>vivienda-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>servicios</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>servicios-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>acceso</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>acceso-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>salud</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>salud-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>organizacion</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>organizacion-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>impacto</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>impacto-portlet</css-class-wrapper>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>

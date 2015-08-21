@@ -454,6 +454,255 @@
             <qname xmlns:x="http://liferay.com/events">x:ipc.pitch3</qname>
         </supported-processing-event>
 	</portlet>
+	<portlet>
+		<portlet-name>medios</portlet-name>
+		<display-name>Medios</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.MediosPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/medios/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Medios</title>
+			<short-title>Medios</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>vivienda</portlet-name>
+		<display-name>Vivienda</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.ViviendaPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/vivienda/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Vivienda</title>
+			<short-title>Vivienda</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>servicios</portlet-name>
+		<display-name>Servicios</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.ServiciosPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/servicios/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Servicios</title>
+			<short-title>Servicios</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>acceso</portlet-name>
+		<display-name>Acceso</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.AccesoPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/acceso/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Acceso</title>
+			<short-title>Acceso</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>salud</portlet-name>
+		<display-name>Salud</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.SaludPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/salud/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Salud</title>
+			<short-title>Salud</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>organizacion</portlet-name>
+		<display-name>Organizacion</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.OrganizacionPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/organizacion/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Organizacion</title>
+			<short-title>Organizacion</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>impacto</portlet-name>
+		<display-name>Impacto</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.ImpactoPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/impacto/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Impacto</title>
+			<short-title>Impacto</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
 	<event-definition>
 		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch</qname>
 		<value-type>java.lang.String</value-type>
@@ -470,9 +719,18 @@
 		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch3</qname>
 		<value-type>java.lang.String</value-type>
 	</event-definition>
-	
+	<event-definition>
+		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+		<value-type>java.lang.String</value-type>
+	</event-definition>
 	<public-render-parameter>
 			<identifier>eventoid</identifier> <qname xmlns:x="http://liferay.com/eventoid">x:eventoid</qname>
 		</public-render-parameter>
+
+
+
+
+
+
 
 </portlet-app>

@@ -35,19 +35,9 @@ public class ListEventosPortlet extends MVCPortlet {
 		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.ubicacion";
 		UbicacionFacadeREST servicio = new UbicacionFacadeREST(Ubicacion.class, url);
 		List<Ubicacion> ubicaciones = servicio.getAll();
-		_log.error("ubicaciones are> " + ubicaciones.get(2).getLatitud());
+		_log.error("ubicaciones are> " + ubicaciones.get(0).getLatitud());
 		renderRequest.setAttribute("itemlist", ubicaciones);
 		super.doView(renderRequest, renderResponse);
-	}
-
-	
-	public void addName(ActionRequest actionRequest, ActionResponse actionResponse) 
-			throws IOException, PortletException, PortalException, SystemException{
-		String user = ParamUtil.get(actionRequest, "userName", StringPool.BLANK); 
-		//String user = actionRequest.getParameter("userName");
-		actionRequest.setAttribute("userName", user);
-		_log.error("user is> " + user);
-		actionRequest.getPortletSession().setAttribute("userName", user);
 	}
 
 	//"Dispara" el evento y envia el id
@@ -61,9 +51,11 @@ public class ListEventosPortlet extends MVCPortlet {
 		response.setEvent(qName2, id);
 		QName qName3 = new QName("http://liferay.com/events","ipc.pitch3");		
 		response.setEvent(qName3, id);
+		QName qName4 = new QName("http://liferay.com/events","ipc.pitch4");		
+		response.setEvent(qName4, id);
 		
 		try {
-			response.sendRedirect("/web/resphere/evaluacion");
+			response.sendRedirect("/web/resphere/evaluacion");			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

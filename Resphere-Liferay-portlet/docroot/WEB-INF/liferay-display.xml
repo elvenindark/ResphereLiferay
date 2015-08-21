@@ -11,6 +11,13 @@
 		<portlet id="mapa"></portlet>
 		<portlet id="mapa-portlet2"></portlet>
 		<portlet id="poblacion"></portlet>
+		<portlet id="medios"></portlet>
+		<portlet id="vivienda"></portlet>
+		<portlet id="servicios"></portlet>
+		<portlet id="acceso"></portlet>
+		<portlet id="salud"></portlet>
+		<portlet id="organizacion"></portlet>
+		<portlet id="impacto"></portlet>
 	</category>
 	<category name="Respuesta">
 		<portlet id="respuesta"></portlet>

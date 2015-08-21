@@ -35,6 +35,14 @@
 <%@ page import="com.resphere.server.model.Normaesencial" %>
 <%@ page import="com.resphere.server.model.Indicadorclave" %>
 <%@ page import="com.resphere.server.model.Poblacion" %>
+<%@ page import="com.resphere.server.model.Mediovida" %>
+<%@ page import="com.resphere.server.model.Vivienda" %>
+<%@ page import="com.resphere.server.model.Servicio" %>
+<%@ page import="com.resphere.server.model.Salud" %>
+<%@ page import="com.resphere.server.model.Acceso" %>
+<%@ page import="com.resphere.server.model.Tipoacceso" %>
+<%@ page import="com.resphere.server.model.Organizacion" %>
+<%@ page import="com.resphere.server.model.Impacto" %>
 
 
 <liferay-theme:defineObjects/>
