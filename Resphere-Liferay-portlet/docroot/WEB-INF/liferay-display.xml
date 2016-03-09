@@ -18,6 +18,15 @@
 		<portlet id="salud"></portlet>
 		<portlet id="organizacion"></portlet>
 		<portlet id="impacto"></portlet>
+		<portlet id="necesidades"></portlet>
+		<portlet id="equipo"></portlet>
+		<portlet id="monitoreo"></portlet>
+		<portlet id="monitoreo-agua"></portlet>
+		<portlet id="monitoreo-alimentacion"></portlet>
+		<portlet id="monitoreo-alojamiento"></portlet>
+		<portlet id="monitoreo-salud"></portlet>
+		<portlet id="reportes"></portlet>
+		<portlet id="comentario"></portlet>
 	</category>
 	<category name="Respuesta">
 		<portlet id="respuesta"></portlet>

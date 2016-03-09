@@ -14,10 +14,12 @@ import javax.portlet.RenderResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.liferay.portal.kernel.json.JSONException;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.resphere.server.model.Acceso;
+import com.resphere.server.model.Accesov;
 import com.resphere.server.model.Tipoacceso;
-import com.resphere.service.AccesoFacadeREST;
+import com.resphere.service.AccesovFacadeREST;
 import com.resphere.service.TipoaccesoFacadeREST;
 
 /**
@@ -32,20 +34,21 @@ public class AccesoPortlet extends MVCPortlet {
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
 		renderRequest.setAttribute("idevento", id);
 		if(this.id != null){
-			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.acceso";
-			String urlta = "http://localhost:8080/respherers/webresources/com.resphere.server.model.tipoacceso";
-			AccesoFacadeREST acceso = new AccesoFacadeREST(Acceso.class, url);
-			TipoaccesoFacadeREST tipo = new TipoaccesoFacadeREST(Tipoacceso.class, urlta);
-			List<Tipoacceso> tipos = tipo.getAllById(id);
-			Acceso item = acceso.get(id);
-			if(item != null && tipos.get(0) != null){
-				renderRequest.setAttribute("itema", item);
-				renderRequest.setAttribute("itemta", tipos.get(0));
-				super.doView(renderRequest, renderResponse);
+			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.accesov";			
+			AccesovFacadeREST servicio = new AccesovFacadeREST(Accesov.class, url);
+			
+			if(servicio != null){
+				List<Accesov> accesos = servicio.getAllById(id);
+				if(accesos!=null && accesos.size()>0){
+					renderRequest.setAttribute("itemlista", accesos);
+					super.doView(renderRequest, renderResponse);
+				}
 			}else{
 				_log.error("acceso es null");
 				super.doView(renderRequest, renderResponse);
 			}
+				
+			
 		}else{
 			_log.error("acceso ERROR CONEXION");
 		}

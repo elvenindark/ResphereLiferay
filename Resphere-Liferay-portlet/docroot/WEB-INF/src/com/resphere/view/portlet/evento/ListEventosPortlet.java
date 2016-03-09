@@ -9,6 +9,7 @@ import javax.portlet.PortletException;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 import javax.xml.namespace.QName;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -17,9 +18,9 @@ import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.util.bridges.mvc.MVCPortlet;
-
+import com.resphere.server.model.Eventov;
 import com.resphere.server.model.Ubicacion;
-
+import com.resphere.service.EventovFacadeREST;
 import com.resphere.service.UbicacionFacadeREST;
 
 
@@ -32,11 +33,13 @@ public class ListEventosPortlet extends MVCPortlet {
 	//Default Render Method.
 	@Override
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
-		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.ubicacion";
-		UbicacionFacadeREST servicio = new UbicacionFacadeREST(Ubicacion.class, url);
-		List<Ubicacion> ubicaciones = servicio.getAll();
-		_log.error("ubicaciones are> " + ubicaciones.get(0).getLatitud());
-		renderRequest.setAttribute("itemlist", ubicaciones);
+		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.eventov";
+		EventovFacadeREST servicio = new EventovFacadeREST(Eventov.class, url); 
+		//UbicacionFacadeREST servicio = new UbicacionFacadeREST(Ubicacion.class, url);
+		List<Eventov> eventos = servicio.getAll();
+		//List<Ubicacion> ubicaciones = servicio.getAll();
+		_log.error("eventos are> " + eventos.get(0).getEvento());;
+		renderRequest.setAttribute("itemlist", eventos);
 		super.doView(renderRequest, renderResponse);
 	}
 

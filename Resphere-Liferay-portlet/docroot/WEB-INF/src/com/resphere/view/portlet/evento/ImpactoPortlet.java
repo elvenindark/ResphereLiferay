@@ -16,7 +16,8 @@ import org.apache.commons.logging.LogFactory;
 
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.resphere.server.model.Impacto;
-import com.resphere.service.ImpactoFacadeREST;
+import com.resphere.server.model.Impactov;
+import com.resphere.service.ImpactovFacadeREST;
 
 /**
  * Portlet implementation class ImpactoPortlet
@@ -30,11 +31,11 @@ public class ImpactoPortlet extends MVCPortlet {
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
 		renderRequest.setAttribute("idevento", id);
 		if(this.id != null){
-			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.impacto";
-			ImpactoFacadeREST servicio = new ImpactoFacadeREST(Impacto.class, url);
-			List<Impacto> impactos = servicio.getAllById(id);
+			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.impactov";
+			ImpactovFacadeREST servicio = new ImpactovFacadeREST(Impactov.class, url);
+			List<Impactov> impactos = servicio.getAllById(id);
 			if(impactos != null){
-				for(Impacto item: impactos)
+				for(Impactov item: impactos)
 					System.out.println(item);
 				renderRequest.setAttribute("itemlisti", impactos);
 				super.doView(renderRequest, renderResponse);

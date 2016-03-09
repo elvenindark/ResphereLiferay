@@ -15,8 +15,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.liferay.util.bridges.mvc.MVCPortlet;
-import com.resphere.server.model.Servicio;
-import com.resphere.service.ServicioFacadeREST;
+import com.resphere.server.model.Serviciov;
+import com.resphere.service.ServiciovFacadeREST;
 
 /**
  * Portlet implementation class ServiciosPortlet
@@ -30,11 +30,11 @@ public class ServiciosPortlet extends MVCPortlet {
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
 		renderRequest.setAttribute("idevento", id);
 		if(this.id != null){
-			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.servicio";
-			ServicioFacadeREST servicio = new ServicioFacadeREST(Servicio.class, url);
-			List<Servicio> servicios = servicio.getAllById(id);
+			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.serviciov";
+			ServiciovFacadeREST servicio = new ServiciovFacadeREST(Serviciov.class, url);
+			List<Serviciov> servicios = servicio.getAllById(id);
 			if(servicios!=null){
-				for(Servicio item: servicios)
+				for(Serviciov item: servicios)
 					System.out.println(item.getIdtipodano());
 				renderRequest.setAttribute("itemlists", servicios);
 				super.doView(renderRequest, renderResponse);

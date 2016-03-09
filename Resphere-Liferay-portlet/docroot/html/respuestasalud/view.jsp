@@ -31,8 +31,8 @@
 				String id = (String)prefs.getValue("id", ""); 
 	        	prefs.setValue("id", String.valueOf(eventov.getIdevento()));
 	        	prefs.store();%>    		
-			<liferay-ui:search-container-column-text name="Evento" property="evento" href="${editRespuestaAgua}"/>
-			<liferay-ui:search-container-column-text name="Latitud" property="latitud" href="<%=actionURL.toString() %>"/>
+			<liferay-ui:search-container-column-text name="Evento" property="evento" href="<%=actionURL.toString() %>"/>
+			<liferay-ui:search-container-column-text name="Latitud" property="latitud" />
 			<liferay-ui:search-container-column-text name="Longitud" property="longitud" />
 			<liferay-ui:search-container-column-text name="Provincia" property="provincia"/>
 			<liferay-ui:search-container-column-text name="Canton" property="canton"/>

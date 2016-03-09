@@ -20,16 +20,17 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
-import com.resphere.model.Respuestahumanitaria;
 import com.resphere.server.model.Eventosv;
 import com.resphere.server.model.Indicadorclave;
 import com.resphere.server.model.Normaesencial;
 import com.resphere.server.model.Normaminima;
+import com.resphere.server.model.Respuestahumanitaria;
 import com.resphere.service.EventosvFacadeREST;
 import com.resphere.service.IClaveFacadeREST;
 import com.resphere.service.NEsencialFacadeREST;
 import com.resphere.service.NMinimaFacadeREST;
 import com.resphere.service.RespuestahumanitariaFacadeREST;
+
 
 /**
  * Portlet implementation class RespuestaAgua
@@ -46,9 +47,9 @@ public class RespuestaAgua extends MVCPortlet {
 		EventosvFacadeREST servicio = new EventosvFacadeREST(Eventosv.class, url);
 		List<Eventosv> ubicaciones = servicio.getAll();
 		if(request!=null && request1!=null)
-			_log.error("eventosv are> " + ubicaciones.get(2).getEvento() + " jspPage:" + request1);
+			_log.error("eventosv are> " + ubicaciones.get(0).getEvento() + " jspPage:" + request1);
 		else
-			_log.error("eventosv are> " + ubicaciones.get(3).getEvento() +" render is null");
+			_log.error("eventosv are> " + ubicaciones.get(0).getEvento() +" render is null");
 		renderRequest.setAttribute("itemlist", ubicaciones);
 		super.doView(renderRequest, renderResponse);
 	}
@@ -61,7 +62,7 @@ public class RespuestaAgua extends MVCPortlet {
 		EventosvFacadeREST servicio = new EventosvFacadeREST(Eventosv.class, url);
 		List<Eventosv> ubicaciones = servicio.getAll();
 		if(request!=null)
-			_log.error("eventosv are> " + ubicaciones.get(2).getEvento() + " jspPage:" + request);
+			_log.error("eventosv are> " + ubicaciones.get(0).getEvento() + " jspPage:" + request);
 		else
 			_log.error("request null");
 		renderRequest.setAttribute("itemlist", ubicaciones);

@@ -49,11 +49,11 @@ public class OrganizacionPortlet extends MVCPortlet {
 				}
 				super.doView(renderRequest, renderResponse);
 			}else{
-				_log.error("servicios es null");
+				_log.error("organizaciones es null");
 				super.doView(renderRequest, renderResponse);
 			}
 		}else{
-			_log.error("servicios ERROR CONEXION");
+			_log.error("organizaciones ERROR CONEXION");
 		}
 	}
 	
@@ -62,7 +62,7 @@ public class OrganizacionPortlet extends MVCPortlet {
 		Event event = request.getEvent();
 		String idevento = (String)event.getValue();
 		if(idevento != null){		
-			_log.info("idevento en servicios es " + idevento);
+			_log.info("idevento en organizaciones es " + idevento);
 			response.setRenderParameter("idevento", idevento);
 			this.id = idevento;		
 		}else

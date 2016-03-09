@@ -16,7 +16,8 @@ import org.apache.commons.logging.LogFactory;
 
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.resphere.server.model.Salud;
-import com.resphere.service.SaludFacadeREST;
+import com.resphere.server.model.Saludv;
+import com.resphere.service.SaludvFacadeREST;
 
 /**
  * Portlet implementation class SaludPortlet
@@ -30,20 +31,20 @@ public class SaludPortlet extends MVCPortlet {
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
 		renderRequest.setAttribute("idevento", id);
 		if(this.id != null){
-			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.salud";
-			SaludFacadeREST servicio = new SaludFacadeREST(Salud.class, url);
-			List<Salud> saluds = servicio.getAllById(id);
+			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.saludv";
+			SaludvFacadeREST servicio = new SaludvFacadeREST(Saludv.class, url);
+			List<Saludv> saluds = servicio.getAllById(id);
 			if(saluds!=null){
-				for(Salud item: saluds)
+				for(Saludv item: saluds)
 					System.out.println(item);
 				renderRequest.setAttribute("itemlistsa", saluds);
 				super.doView(renderRequest, renderResponse);
 			}else{
-				_log.error("servicios es null");
+				_log.error("salud es null");
 				super.doView(renderRequest, renderResponse);
 			}
 		}else{
-			_log.error("servicios ERROR CONEXION");
+			_log.error("salud ERROR CONEXION");
 		}
 	}
 

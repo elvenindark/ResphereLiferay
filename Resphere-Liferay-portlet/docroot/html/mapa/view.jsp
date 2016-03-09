@@ -43,20 +43,20 @@ function initialize() {
 	          	map: map	       
 	      	});
   
-  	var html = '<portlet:actionURL name = "eventoDetail" var = "ideventoURL">'+
+  	var html<%=i%> = '<portlet:actionURL name = "eventoDetail" var = "ideventoURL">'+
 	'<portlet:param name = "search" value = "<%=tempResults1.get(i).getIdevento()%>"></portlet:param>' +
 	'</portlet:actionURL>'+
 	'<a href="<%=ideventoURL.toString()%>"> ' + '<%=tempResults1.get(i).getParroquia()%>' + ' </a>'+
 	'<b>' + '<%=tempResults1.get(i).getEvento()%>' + '</b> <br/>';
-	var infowindow = new google.maps.InfoWindow({ 
-		content: html,	
+	var infowindow<%=i%> = new google.maps.InfoWindow({ 
+		content: html<%=i%>,	
 		closeBoxMargin: "10px 2px 2px 2px",
         closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
 	  });
   	 google.maps.event.addListener(marker<%=i%>, 'click', function() {
   		 
-  	    infowindow.open(map,marker<%=i%>);
-  	    infowindow.setcontent(html);  	  	
+  	    infowindow<%=i%>.open(map,marker<%=i%>);
+  	    	  	
   	  });
 	      <%	      
     }%>      

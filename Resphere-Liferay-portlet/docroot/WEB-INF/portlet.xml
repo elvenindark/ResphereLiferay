@@ -702,6 +702,357 @@
 		<security-role-ref>
 			<role-name>user</role-name>
 		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>necesidades</portlet-name>
+		<display-name>Necesidades</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.NecesidadesPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/necesidades/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Necesidades</title>
+			<short-title>Necesidades</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
+	</portlet>
+	<portlet>
+		<portlet-name>equipo</portlet-name>
+		<display-name>Equipo</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.EquipoPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/equipo/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Equipo</title>
+			<short-title>Equipo</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>monitoreo</portlet-name>
+		<display-name>Monitoreo</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.monitoreo.MonitoreoPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/monitoreo/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Monitoreo</title>
+			<short-title>Monitoreo</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>monitoreo-agua</portlet-name>
+		<display-name>Monitoreo Agua</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.monitoreo.MonitoreoAgua
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/monitoreoagua/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-template</name>
+			<value>/html/monitoreoagua/edit.jsp</value>
+		</init-param>
+		<init-param>
+            <name>add-process-action-success-action</name>
+            <value>false</value>
+ 		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Monitoreo Agua</title>
+			<short-title>Monitoreo Agua</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>monitoreo-alimentacion</portlet-name>
+		<display-name>Monitoreo Alimentacion</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.monitoreo.MonitoreoAlimentacion
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/monitoreoalimentacion/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-template</name>
+			<value>/html/monitoreoalimentacion/edit.jsp</value>
+		</init-param>
+		<init-param>
+            <name>add-process-action-success-action</name>
+            <value>false</value>
+ 		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Monitoreo Alimentacion</title>
+			<short-title>Monitoreo Alimentacion</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>monitoreo-alojamiento</portlet-name>
+		<display-name>Monitoreo Alojamiento</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.monitoreo.MonitoreoAlojamiento
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/monitoreoalojamiento/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-template</name>
+			<value>/html/monitoreoalojamiento/edit.jsp</value>
+		</init-param>
+		<init-param>
+            <name>add-process-action-success-action</name>
+            <value>false</value>
+ 		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Monitoreo Alojamiento</title>
+			<short-title>Monitoreo Alojamiento</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>monitoreo-salud</portlet-name>
+		<display-name>Monitoreo Salud</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.monitoreo.MonitoreoSalud
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/monitoreosalud/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-template</name>
+			<value>/html/monitoreosalud/edit.jsp</value>
+		</init-param>
+		<init-param>
+            <name>add-process-action-success-action</name>
+            <value>false</value>
+ 		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Monitoreo Salud</title>
+			<short-title>Monitoreo Salud</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>reportes</portlet-name>
+		<display-name>Reportes</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.reporte.ReportesPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/reportes/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>edit-template</name>
+			<value>/html/reportes/edit.jsp</value>
+		</init-param>
+		<init-param>
+            <name>add-process-action-success-action</name>
+            <value>false</value>
+ 		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Reportes</title>
+			<short-title>Reportes</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+	</portlet>
+	<portlet>
+		<portlet-name>comentario</portlet-name>
+		<display-name>Comentario</display-name>
+		<portlet-class>
+			com.resphere.view.portlet.evento.ComentarioPortlet
+		</portlet-class>
+		<init-param>
+			<name>view-template</name>
+			<value>/html/comentario/view.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>Comentario</title>
+			<short-title>Comentario</short-title>
+			<keywords></keywords>
+		</portlet-info>
+		<security-role-ref>
+			<role-name>administrator</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>guest</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>power-user</role-name>
+		</security-role-ref>
+		<security-role-ref>
+			<role-name>user</role-name>
+		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
 	</portlet>
 	<event-definition>
 		<qname xmlns:x="http://liferay.com/events">x:ipc.pitch</qname>
@@ -726,6 +1077,15 @@
 	<public-render-parameter>
 			<identifier>eventoid</identifier> <qname xmlns:x="http://liferay.com/eventoid">x:eventoid</qname>
 		</public-render-parameter>
+
+
+
+
+
+
+
+
+
 
 
 

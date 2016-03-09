@@ -29,20 +29,40 @@
 <%@ page import="com.liferay.portal.theme.ThemeDisplay" %>
 
 <%@ page import="com.resphere.server.model.Eventosv"%>
+<%@ page import="com.resphere.server.model.Eventov"%>
 <%@ page import="com.resphere.server.model.Ubicacion"%>
 <%@ page import="com.resphere.server.model.Evento"%>
 <%@ page import="com.resphere.server.model.Normaminima" %>
 <%@ page import="com.resphere.server.model.Normaesencial" %>
 <%@ page import="com.resphere.server.model.Indicadorclave" %>
 <%@ page import="com.resphere.server.model.Poblacion" %>
+<%@ page import="com.resphere.server.model.Poblacionv" %>
 <%@ page import="com.resphere.server.model.Mediovida" %>
+<%@ page import="com.resphere.server.model.Mediovidav" %>
 <%@ page import="com.resphere.server.model.Vivienda" %>
 <%@ page import="com.resphere.server.model.Servicio" %>
+<%@ page import="com.resphere.server.model.Serviciov" %>
 <%@ page import="com.resphere.server.model.Salud" %>
+<%@ page import="com.resphere.server.model.Saludv" %>
 <%@ page import="com.resphere.server.model.Acceso" %>
+<%@ page import="com.resphere.server.model.Accesov" %>
 <%@ page import="com.resphere.server.model.Tipoacceso" %>
 <%@ page import="com.resphere.server.model.Organizacion" %>
+<%@ page import="com.resphere.server.model.Accion" %>
 <%@ page import="com.resphere.server.model.Impacto" %>
+<%@ page import="com.resphere.server.model.Impactov" %>
+<%@ page import="com.resphere.server.model.Nurgente" %>
+<%@ page import="com.resphere.server.model.Nurgentev" %>
+<%@ page import="com.resphere.server.model.Nrecuperacion" %>
+<%@ page import="com.resphere.server.model.Nrecuperacionv" %>
+<%@ page import="com.resphere.server.model.Nrrhh" %>
+<%@ page import="com.resphere.server.model.Nrrhhv" %>
+<%@ page import="com.resphere.server.model.Equipo" %>
+<%@ page import="com.resphere.server.model.Comentario" %>
+<%@ page import="com.resphere.server.model.Equipov" %>
+<%@ page import="com.resphere.server.model.Respuestabysectorv" %>
+<%@ page import="com.resphere.server.model.Monitoreorespuesta" %>
+<%@ page import="com.resphere.view.portlet.reporte.Conexion" %>
 
 
 <liferay-theme:defineObjects/>

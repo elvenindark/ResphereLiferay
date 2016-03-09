@@ -12,7 +12,7 @@
     var columns = ['Sector',
     				'descripcion',
     				{key:'estado',
-    				formatter: '<a href="{value}">mas ...</a>',
+    				formatter: '<a href="{value}">ver ...</a>',
     				allowHTML: true}];
 
     var data = [

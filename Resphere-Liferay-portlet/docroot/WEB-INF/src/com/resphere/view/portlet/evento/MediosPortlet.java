@@ -16,7 +16,9 @@ import org.apache.commons.logging.LogFactory;
 
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.resphere.server.model.Mediovida;
+import com.resphere.server.model.Mediovidav;
 import com.resphere.service.MediovidaFacadeREST;
+import com.resphere.service.MediovidavFacadeREST;
 
 /**
  * Portlet implementation class MediosPortlet
@@ -30,11 +32,11 @@ public class MediosPortlet extends MVCPortlet {
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
 		renderRequest.setAttribute("idevento", id);
 		if(this.id != null){
-			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.mediovida";
-			MediovidaFacadeREST servicio = new MediovidaFacadeREST(Mediovida.class, url);
-			List<Mediovida> medios = servicio.getAllById(id);
+			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.mediovidav";
+			MediovidavFacadeREST servicio = new MediovidavFacadeREST(Mediovidav.class, url);
+			List<Mediovidav> medios = servicio.getAllById(id);
 			if(medios != null){
-				for(Mediovida item: medios)
+				for(Mediovidav item: medios)
 					System.out.println(item.getIdtipodano());
 				renderRequest.setAttribute("itemlistm", medios);
 				super.doView(renderRequest, renderResponse);
