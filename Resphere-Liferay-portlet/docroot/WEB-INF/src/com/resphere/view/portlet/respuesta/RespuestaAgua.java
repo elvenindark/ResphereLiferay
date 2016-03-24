@@ -156,11 +156,11 @@ public class RespuestaAgua extends MVCPortlet {
 		}
 		respuesta.setIdevento(idevento);
 		respuesta.setIdindicadorclave(idindicadorclave);
-		if(respuesta.getAplica()!=null){
-			System.out.println(respuesta.getAplica());
+		if(respuesta.getAplica()!=null){			
 			if(respuesta.getAplica().equals("1") || respuesta.getAplica().equals("on")){				
 				respuesta.setAplica("true");				
-			}
+			}else
+				respuesta.setAplica("false");
 		}else{
 			respuesta.setAplica("false");
 			System.out.println(respuesta.getAplica() + ", " + Boolean.valueOf(respuesta.getAplica()));

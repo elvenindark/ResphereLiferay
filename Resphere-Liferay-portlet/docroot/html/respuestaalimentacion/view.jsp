@@ -23,7 +23,7 @@
 	            <portlet:param name="id" value='<%=String.valueOf(eventov.getIdevento())%>'/>
 	            <portlet:param name="action" value="edit"/>
 	        </portlet:actionURL>	
-	         <portlet:renderURL var="editRespuestaAlimentacion">
+	         <portlet:renderURL var="editRespuestaAgua">
 	        	<portlet:param name="jspPage" value="edit"/>
 	        	<portlet:param name="id" value='<%=String.valueOf(eventov.getIdevento())%>'/>
 	        </portlet:renderURL> 

@@ -2,77 +2,68 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 <%@ include file="/html/init.jsp" %>
+<%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
+
 <script src="http://code.jquery.com/jquery-latest.js">   
 </script>
 
 <portlet:resourceURL var="ajaxCallResourceURL">
 </portlet:resourceURL>
+<%String currentURL = (String)PortalUtil.getCurrentURL(request); %>
 
-<liferay-ui:search-container emptyResultsMessage="No existen normas minimas" delta="10">
+<liferay-ui:search-container emptyResultsMessage="No existen normas minimas" delta="50">
 	<liferay-ui:search-container-results>
-	<%	List<Normaminima> nminimas = (List<Normaminima>)request.getAttribute("nminimas");
-		if(nminimas != null){
-			results = ListUtil.subList(nminimas, searchContainer.getStart(), searchContainer.getEnd());
-			total = nminimas.size();
+	<%	List<Respuestahumanitariav> respuestasv = (List<Respuestahumanitariav>)request.getAttribute("respuestasAgua");
+		System.out.println("edit.jsp after render > " + request.getAttribute("idevento"));
+		
+		if(respuestasv != null){
+			for(Respuestahumanitariav item: respuestasv){
+				if(item.getAplica().equals("A") || item.getAplica().equals("1") || item.getAplica().equals("on")){				
+					item.setAplica("A");
+				}else{				
+					item.setAplica("P");
+				}
+				item.setIdevento((String)request.getAttribute("idevento"));
+			}
+			results = ListUtil.subList(respuestasv, searchContainer.getStart(), searchContainer.getEnd());
+			total = respuestasv.size();			
 			pageContext.setAttribute("results", results);			
 		}
 		else
-			System.out.println("problemas al extraer normas");				
+			System.out.println("problemas al extraer normas");						
 		%>
-	</liferay-ui:search-container-results>	
-	<%int k = 0; %>
-	<liferay-ui:search-container-row className="com.resphere.server.model.Normaminima" keyProperty="idnormaminima" modelVar="normaminima">			
-		<liferay-ui:search-container-column-text name="Normas Minimas">					
-			<liferay-ui:panel collapsible="true" defaultState="open" title="<%=normaminima.getNormaminima() %>">				
-				<%							
-					PortletPreferences prefs = renderRequest.getPreferences();
-					//String idevento = (String)prefs.getValue("id", "");
-					String idevento = (String)request.getAttribute("idevento");
-					ArrayList<List<Normaesencial>> nesenciales = (ArrayList<List<Normaesencial>>)request.getAttribute("nesenciales");
-					ArrayList<List<Indicadorclave>> iclaves = (ArrayList<List<Indicadorclave>>)request.getAttribute("iclaves");					
-					if(nesenciales == null)
-						System.out.println("problemas al extraer normas esenciales");					
-					int idnesenciales = nesenciales.get(Integer.valueOf(row.getRowId())-1).size();
-					for(int j = 0; j < nesenciales.get(Integer.valueOf(row.getRowId())-1).size(); j++)					
-					{
-						//System.out.println("Array[" + j + "]" + "->row(" + row.getRowId() + ")" + " iteracion:" + k);
-					%>										
-				<liferay-ui:panel collapsible="true" defaultState="open" title="<%=nesenciales.get(Integer.valueOf(row.getRowId())-1).get(j).getDescripcion() %>">					
-					<%										
-						if(iclaves == null)
-							System.out.println("problemas al extraer indicadores clave");							
-						for(int i = 0; i < iclaves.get(k).size(); i++)
-						{
-					 %>
-					 <%	String idform = String.valueOf(iclaves.get(k).get(i).getIdindicadorclave());				 
-					 	String fm = "fm"+idform;
-					 	String tg =  "tg" + idform;	 %>	
-					 <form action="<%= ajaxCallResourceURL.toString() %>" method="post" id="<%=fm%>">	
-					 	<div class="formresponse" id="<%=tg%>">
-					 		<p class="header toggler-header-collapsed"><span>+  </span><%=iclaves.get(k).get(i).getIndicadorclave() %></p>
-					 			<p class="content toggler-content-collapsed">									
-										<input type="checkbox" name="<portlet:namespace />aplica" label="aplica" id="idaplica"> aplica</input>
-										<input type = "hidden" name = "<portlet:namespace />idiclave" value = "<%=idform %>" id="fhid"></input>
-										<input type = "hidden" name = "<portlet:namespace />idevento" value = "<%=idevento %>" id="idevento"></input>
-										<textarea name="<portlet:namespace />cantidad" label="" cols="120" rows="2"  id="idcantidad" class="idaplica"> </textarea>		
-										<button type= "submit" label="Agregar">Guardar</button>											
-								</p>
-							</div>
-						</form>
-					</liferay-ui:panel>		
-					 <%
-					 k++;
-					 } %>
-				</liferay-ui:panel>
-				<%} %>
+	</liferay-ui:search-container-results>		
+	<liferay-ui:search-container-row className="com.resphere.server.model.Respuestahumanitariav" keyProperty="idindicadorclave" modelVar="respuestad">			
+		<portlet:actionURL name="respuestaAccion" var="actionURL">            
+	            <portlet:param name="idevento" value='<%=String.valueOf(respuestad.getIdevento())%>'/>
+	            <portlet:param name="idindicadorclave" value='<%=String.valueOf(respuestad.getIdindicadorclave())%>'/>	            
+	            <portlet:param name="backURL" value="<%= currentURL %>" />
+	            <portlet:param name="action" value="edit"/>
+	        </portlet:actionURL>
+		<liferay-ui:search-container-column-text name="Norma Minima" property="normaMinima"/>	
+		<liferay-ui:search-container-column-text name="Norma Esencial" property="normaEsencial"/>
+		<liferay-ui:search-container-column-text name="Indicador Clave" property="indicadorClave"/>
+		<liferay-ui:search-container-column-text name="Estado" property="aplica"/>		
+		<liferay-ui:search-container-column-text name="Accion">
+			<a href="<%=actionURL.toString() %>">Edit</a>
+		</liferay-ui:search-container-column-text>
 			
-				
-		</liferay-ui:search-container-column-text>		
-	
 	</liferay-ui:search-container-row>	
 	
-	<liferay-ui:search-iterator paginate="false"/>
+	<liferay-ui:search-iterator paginate="<%=false%>" />
 </liferay-ui:search-container>
+
+<div id="dialog" title="Titulo dialog" style="display:none;">    
+	<p>Contenido de la ventana.</p>
+</div>
+    
+
+<script>
+	function abrir_dialog() {
+        $( "#dialog" ).dialog();
+    };
+</script>
+
 
 <script type="text/javascript">
 	YUI().use(
@@ -217,9 +208,5 @@
  -->
 
 </aui:script>
- <portlet:renderURL var="editRespuestaAgua">
- 	<portlet:param name="itemlist" value="itemlist"/>
-	<portlet:param name="jspPage" value="/html/respuestaalimentacion/view.jsp"/>
-</portlet:renderURL>
-<a href="<%=editRespuestaAgua%>">volver</a>
+
 
