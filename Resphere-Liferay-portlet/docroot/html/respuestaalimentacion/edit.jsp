@@ -219,7 +219,7 @@
 </aui:script>
  <portlet:renderURL var="editRespuestaAgua">
  	<portlet:param name="itemlist" value="itemlist"/>
-	<portlet:param name="jspPage" value="/html/respuestaagua/view.jsp"/>
+	<portlet:param name="jspPage" value="/html/respuestaalimentacion/view.jsp"/>
 </portlet:renderURL>
 <a href="<%=editRespuestaAgua%>">volver</a>
 

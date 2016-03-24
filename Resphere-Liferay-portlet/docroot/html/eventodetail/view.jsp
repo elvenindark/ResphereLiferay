@@ -10,16 +10,16 @@
 </aui:model-context>
 <aui:layout>
 <aui:column columnWidth="20">
-		<aui:input name="fecha" type="text" />
+		<aui:input name="fecha" disabled="true" type="text" />
 	</aui:column>
 	<aui:column columnWidth="20">
 		<aui:input name="hora"  disabled="true" type="text"/>
 	</aui:column>
 	<aui:column columnWidth="20">
-		<aui:input name="descripcion" type="text" />
+		<aui:input name="descripcion" disabled="true" type="text" />
 	</aui:column>
 	<aui:column columnWidth="20">
-		<aui:input name="amenazas" type="text" />
+		<aui:input name="amenazas" disabled="true" type="text" />
 	</aui:column>
 </aui:layout>
 

@@ -61,9 +61,13 @@
 <%@ page import="com.resphere.server.model.Comentario" %>
 <%@ page import="com.resphere.server.model.Equipov" %>
 <%@ page import="com.resphere.server.model.Respuestabysectorv" %>
+<%@ page import="com.resphere.server.model.Respuestahumanitariav" %>
 <%@ page import="com.resphere.server.model.Monitoreorespuesta" %>
 <%@ page import="com.resphere.view.portlet.reporte.Conexion" %>
+<%@ page import="com.resphere.server.model.Indicadorclave" %>
+<%@page import="com.liferay.portal.util.PortalUtil"%>
 
 
 <liferay-theme:defineObjects/>
 <portlet:defineObjects/>
+
