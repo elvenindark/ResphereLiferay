@@ -7,6 +7,7 @@ import java.util.List;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletException;
+import javax.portlet.PortletPreferences;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
 import javax.portlet.ResourceRequest;
@@ -41,7 +42,7 @@ import com.resphere.service.RespuestahumanitariavFacadeREST;
 public class RespuestaAgua extends MVCPortlet {
  
 	private static Log _log = LogFactory.getLog(RespuestaAgua.class);
-	@Override
+	/*@Override
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException{
 		String request, request1;
 		request = renderRequest.getParameter("jspPage");
@@ -50,11 +51,25 @@ public class RespuestaAgua extends MVCPortlet {
 		EventosvFacadeREST servicio = new EventosvFacadeREST(Eventosv.class, url);
 		List<Eventosv> ubicaciones = servicio.getAll();
 		if(request!=null && request1!=null)
-			_log.info("eventosv are> " + ubicaciones.get(0).getEvento() + " jspPage:" + request1);
+			_log.info("respuestaagua view.jsp doView: " + ubicaciones.get(0).getEvento() + " jspPage:" + request1);
 		else
-			_log.error("eventosv are> " + ubicaciones.get(0).getEvento() +" render is null");
+			_log.error("respuestaagua view.jsp doView: " + ubicaciones.get(0).getEvento() +" render is null");
 		renderRequest.setAttribute("itemlist", ubicaciones);
 		super.doView(renderRequest, renderResponse);
+	}*/
+	
+	@Override
+	public void render (RenderRequest renderRequest, RenderResponse renderResponse) 
+	        throws PortletException, IOException {
+		String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.eventosv";
+		EventosvFacadeREST servicio = new EventosvFacadeREST(Eventosv.class, url);
+		List<Eventosv> ubicaciones = servicio.getAll();
+		
+		_log.info("respuestaagua view.jsp render: " + ubicaciones.get(0).getEvento());
+		renderRequest.setAttribute("itemlist", ubicaciones);
+	   
+	    super.render(renderRequest, renderResponse);
+
 	}
 
 	@Override
@@ -71,16 +86,6 @@ public class RespuestaAgua extends MVCPortlet {
 		renderRequest.setAttribute("itemlist", ubicaciones);
 		super.doEdit(renderRequest, renderResponse);
 	}
-	
-	/*@Override
-	public void render(RenderRequest request, RenderResponse response)
-			throws PortletException, IOException{
-		String renderPageName = ParamUtil.get(request, "renderPage", "respuestaAguaList-jsp");
-		String renderPagePath = getInitParameter(renderPageName);
-		include(renderPagePath, request, response);
-		_log.debug("we are in render" + renderPageName.toString());
-		super.render(request, response);
-	}*/
 		
 	@Override
 	public void  serveResource(ResourceRequest resourceRequest,
@@ -192,8 +197,10 @@ public class RespuestaAgua extends MVCPortlet {
 		Respuestahumanitariav respuesta;
 		if(servicioresp.getAllByIds(idevento, idindicadorclave)!=null && servicioresp.getAllByIds(idevento, idindicadorclave).size()>0){
 			respuesta = servicioresp.getAllByIds(idevento, idindicadorclave).get(0);
+			_log.info("Getting rest respuesta: " + respuesta.getIdevento() + ", " + respuesta.getIdindicadorclave() + ", " + respuesta.getAplica());
 			//respuesta.setAplica("A");
 		}else{
+			_log.error("Getting new respuesta");
 			respuesta = servicioresp.get(idindicadorclave);
 			respuesta.setObservacion("");
 			respuesta.setAplica("P");
