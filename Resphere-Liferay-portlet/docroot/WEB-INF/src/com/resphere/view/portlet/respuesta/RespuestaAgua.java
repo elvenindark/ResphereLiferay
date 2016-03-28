@@ -105,9 +105,8 @@ public class RespuestaAgua extends MVCPortlet {
 			faplica = "0";
 		
 		_log.info("idiclave:" + fhid + ", observaciones:" + fcantidad + ", aplica:" + faplica + ", idevento:" + fidevento + ", idindicador:" + fhid);
-		
-		if(fcantidad != null && faplica != null && fidevento != null && fid != null){
-			Respuestahumanitaria respuesta = new Respuestahumanitaria();
+		Respuestahumanitaria respuesta = new Respuestahumanitaria();
+		if(fcantidad != null && faplica != null && fidevento != null && fid != null){			
 			respuesta.setAplica(faplica);
 			respuesta.setIdevento(fidevento);
 			respuesta.setIdindicadorclave(fhid);
@@ -124,10 +123,55 @@ public class RespuestaAgua extends MVCPortlet {
 					// TODO Auto-generated catch block
 					//resourceRequest.setAttribute("responseAjax", "Respuesta humanitaria no guardada");
 					e.printStackTrace();
-				}			
+				}
+			if(respuesta.getAplica().equals("1"))
+				respuesta.setAplica("true");
+			else
+				respuesta.setAplica("false");
 		}
-		super.serveResource(resourceRequest, resourceResponse);
 		
+		//super.serveResource(resourceRequest, resourceResponse);
+		
+	}
+	
+	public void agregarRespuesta(ActionRequest actionRequest, ActionResponse actionResponse)throws IOException, PortletException, PortalException, SystemException{
+		String fid = (String) ParamUtil.getString(actionRequest, "fid");
+		String fidevento = (String) ParamUtil.getString(actionRequest, "idevento");
+		String fhid = (String) ParamUtil.getString(actionRequest, "idindicadorclave");
+		String fcantidad = (String) ParamUtil.getString(actionRequest,"observacion");
+		String faplica = (String) ParamUtil.getString(actionRequest,"aplica");
+		if(faplica.equals("true"))
+			faplica = "1";
+		else
+			faplica = "0";
+		
+		_log.info("idiclave:" + fhid + ", observaciones:" + fcantidad + ", aplica:" + faplica + ", idevento:" + fidevento + ", idindicador:" + fhid);
+		Respuestahumanitaria respuesta = new Respuestahumanitaria();
+		if(fcantidad != null && faplica != null && fidevento != null && fid != null){			
+			respuesta.setAplica(faplica);
+			respuesta.setIdevento(fidevento);
+			respuesta.setIdindicadorclave(fhid);
+			respuesta.setObservacion(fcantidad);
+
+			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.respuestahumanitaria";
+			RespuestahumanitariaFacadeREST servicio = new RespuestahumanitariaFacadeREST(Respuestahumanitaria.class, url);
+			if(servicio!=null)
+				try {
+					_log.info("idiclave:" + fhid + ", observaciones:" + fcantidad + ", aplica:" + faplica);
+					servicio.post(respuesta);
+					//resourceRequest.setAttribute("responseAjax", "Respuesta humanitaria guardada satisfactoriamente");
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					//resourceRequest.setAttribute("responseAjax", "Respuesta humanitaria no guardada");
+					e.printStackTrace();
+				}
+			if(respuesta.getAplica().equals("1"))
+				respuesta.setAplica("true");
+			else
+				respuesta.setAplica("false");
+		}
+		
+		actionResponse.setRenderParameter("jspPage", "/html/respuestaagua/dialog.jsp");
 	}
 	
 	public void respuestaAccion(ActionRequest actionRequest, ActionResponse actionResponse)throws IOException, PortletException, PortalException, SystemException{
@@ -179,9 +223,11 @@ public class RespuestaAgua extends MVCPortlet {
 	
 	 public void respuestaDetails(ActionRequest actionRequest, ActionResponse actionResponse)throws IOException, PortletException, PortalException, SystemException{
 	   
-		String id, action = null;		
+		String id, action, evento, lugar = null;		
 		id = (String)actionRequest.getParameter("id");		
 		action = (String)actionRequest.getParameter("action");
+		evento = (String)actionRequest.getParameter("evento");
+		lugar = (String)actionRequest.getParameter("lugar");
 		
 		if(id !=null && action != null)
 			_log.info("we are in respuesta view.jsp> " + id );
@@ -210,6 +256,8 @@ public class RespuestaAgua extends MVCPortlet {
 		if(respuestasv != null)
 			actionRequest.setAttribute("respuestasAgua", respuestasv);		
 		actionRequest.setAttribute("idevento", id);		
+		actionRequest.setAttribute("evento", evento);
+		actionRequest.setAttribute("lugar", lugar);
 		actionResponse.setRenderParameter("jspPage", "/html/respuestaagua/edit.jsp");	  
 	 } 
 	 

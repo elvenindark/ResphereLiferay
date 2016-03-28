@@ -9,7 +9,12 @@
 
 <portlet:resourceURL var="ajaxCallResourceURL">
 </portlet:resourceURL>
-<%String currentURL = (String)PortalUtil.getCurrentURL(request); %>
+<%String currentURL = (String)PortalUtil.getCurrentURL(request); 
+	String evento = (String)request.getAttribute("evento");
+	String lugar = (String)request.getAttribute("lugar");String descripcion = evento.toUpperCase() + " en " + lugar;%>
+	
+<aui:fieldset label="<%=descripcion%>">		
+</aui:fieldset>
 
 <liferay-ui:search-container emptyResultsMessage="No existen normas minimas" delta="50">
 	<liferay-ui:search-container-results>

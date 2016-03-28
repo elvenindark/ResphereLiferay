@@ -176,9 +176,11 @@ public class RespuestaAlojamiento extends MVCPortlet {
 	
 	 public void respuestaDetails(ActionRequest actionRequest, ActionResponse actionResponse)throws IOException, PortletException, PortalException, SystemException{
 		   
-			String id, action = null;		
+		 	String id, action, evento, lugar = null;		
 			id = (String)actionRequest.getParameter("id");		
 			action = (String)actionRequest.getParameter("action");
+			evento = (String)actionRequest.getParameter("evento");
+			lugar = (String)actionRequest.getParameter("lugar");
 			
 			if(id !=null && action != null)
 				_log.info("we are in respuesta view.jsp> " + id );
@@ -207,6 +209,8 @@ public class RespuestaAlojamiento extends MVCPortlet {
 			if(respuestasv != null)
 				actionRequest.setAttribute("respuestasAgua", respuestasv);		
 			actionRequest.setAttribute("idevento", id);		
+			actionRequest.setAttribute("evento", evento);
+			actionRequest.setAttribute("lugar", lugar);
 			actionResponse.setRenderParameter("jspPage", "/html/respuestaagua/edit.jsp");	  
 		 } 
 	

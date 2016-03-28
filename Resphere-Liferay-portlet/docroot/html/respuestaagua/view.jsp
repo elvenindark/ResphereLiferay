@@ -21,6 +21,8 @@
 		<liferay-ui:search-container-row className="com.resphere.server.model.Eventosv" keyProperty="idevento" modelVar="eventov">
 			<portlet:actionURL name="respuestaDetails" var="actionURL">            
 	            <portlet:param name="id" value='<%=String.valueOf(eventov.getIdevento())%>'/>
+	            <portlet:param name="evento" value='<%=String.valueOf(eventov.getEvento())%>'/>
+	            <portlet:param name="lugar" value='<%=String.valueOf(eventov.getParroquia())%>'/>	            
 	            <portlet:param name="action" value="edit"/>
 	        </portlet:actionURL>	
 	         <portlet:renderURL var="editRespuestaAgua">
