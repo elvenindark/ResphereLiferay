@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 <%@ include file="/html/init.jsp" %>
 <portlet:defineObjects />
-<liferay-ui:search-container emptyResultsMessage="No existen datos" delta="5">	
+<liferay-ui:search-container emptyResultsMessage="No existen datos" delta="10">	
 	<liferay-ui:search-container-results>
 	<% 	List<Saludv> tempResults = (List<Saludv>)request.getAttribute("itemlistsa"); 
 		results = ListUtil.subList(tempResults, searchContainer.getStart(),searchContainer.getEnd());

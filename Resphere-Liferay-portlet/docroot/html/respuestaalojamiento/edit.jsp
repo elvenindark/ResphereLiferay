@@ -16,6 +16,8 @@
 <aui:fieldset label="<%=descripcion%>">		
 </aui:fieldset>
 
+<a href="alojamientos-y-articulos-no-alimentarios">Regresar</a>
+
 <liferay-ui:search-container emptyResultsMessage="No existen normas minimas" delta="50">
 	<liferay-ui:search-container-results>
 	<%	List<Respuestahumanitariav> respuestasv = (List<Respuestahumanitariav>)request.getAttribute("respuestasAgua");

@@ -17,12 +17,7 @@
 <aui:fieldset label="<%=descripcion%>">		
 </aui:fieldset>
 
-<portlet:renderURL var="viewURL" portletMode="">
-    <portlet:param name="mvcPath" value="/respuestaagua/view.jsp"></portlet:param>
-</portlet:renderURL>
-
 <a href="agua-y-promocion-de-la-higiene">Regresar</a>
-
 
 <liferay-ui:search-container emptyResultsMessage="No existen normas minimas" delta="50">
 	<liferay-ui:search-container-results>

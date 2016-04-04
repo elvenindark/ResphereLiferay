@@ -25,33 +25,31 @@ import com.resphere.service.OrganizacionFacadeREST;
  */
 public class OrganizacionPortlet extends MVCPortlet {
  
-	private static Log _log = LogFactory.getLog(Organizacion.class);
+	private static Log _log = LogFactory.getLog(OrganizacionPortlet.class);
 	private String id;
 	
 	@Override
 	public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
 		renderRequest.setAttribute("idevento", id);
-		if(this.id != null){
+		if(this.id != null){			
 			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.organizacion";
-			String urla = "http://localhost:8080/respherers/webresources/com.resphere.server.model.accion";
 			OrganizacionFacadeREST servicio = new OrganizacionFacadeREST(Organizacion.class, url);
+			List<Organizacion> organizaciones = servicio.getAllById(this.id);
+			String urla = "http://localhost:8080/respherers/webresources/com.resphere.server.model.accion";			
 			AccionFacadeREST servicioa = new AccionFacadeREST(Accion.class, urla);
-			List<Organizacion> organizaciones = servicio.getAllById(id);
-			List<Accion> acciones = servicioa.getAllById(id);
-			if(organizaciones != null){
-				for(Organizacion item: organizaciones)
-					System.out.println(item);
-				renderRequest.setAttribute("itemlisto", organizaciones);			
-				if(acciones != null){
-					for(Accion itema: acciones)
-						System.out.println();
-					renderRequest.setAttribute("itemlistac", acciones);
-				}
-				super.doView(renderRequest, renderResponse);
-			}else{
-				_log.error("organizaciones es null");
-				super.doView(renderRequest, renderResponse);
-			}
+			_log.info("idevento for search organizacion> " + this.id);						
+			List<Accion> acciones = servicioa.getAllById(this.id);
+			if(organizaciones != null){		
+				renderRequest.setAttribute("itemlisto", organizaciones);
+				_log.info("organizaciones not null> " + organizaciones.size());
+			}else
+				_log.info("organizaciones null");
+			if(acciones != null){			
+				renderRequest.setAttribute("itemlistac", acciones);
+				_log.info("acciones not null> " + acciones.size());
+			}else
+				_log.info("acciones null");
+			super.doView(renderRequest, renderResponse);			
 		}else{
 			_log.error("organizaciones ERROR CONEXION");
 		}

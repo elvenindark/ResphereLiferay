@@ -34,18 +34,19 @@ public class EventoDetail extends MVCPortlet {
 	public void listDetails(EventRequest request, EventResponse response){
 		Event event = request.getEvent();
 		String idevento = (String)event.getValue();				
-		_log.error("idevento en Evento pitch is> " + idevento);
-		response.setRenderParameter("idevento", idevento);
 		this.id = idevento;
+		_log.error("idevento en evento action phase is> " + idevento);
+		response.setRenderParameter("idevento", idevento);		
 	}
 	
 	@ProcessEvent(qname="{http://liferay.com/events}ipc.pitch1")
 	public void listDetails1(EventRequest request, EventResponse response){
 		Event event = request.getEvent();
 		String idevento = (String)event.getValue();		
-		_log.error("idevento en Evento from map pitch1 is> " + idevento);
-		response.setRenderParameter("idevento", idevento);
 		this.id = idevento;
+		_log.error("idevento en evento from map is> " + idevento);
+		response.setRenderParameter("idevento", idevento);
+		
 	}
 	
 		//Default Render Method.
@@ -56,11 +57,8 @@ public class EventoDetail extends MVCPortlet {
 				String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.evento";
 				EventoFacadeREST servicio = new EventoFacadeREST(Evento.class, url);
 				Evento evento = new Evento();
-				evento = servicio.get(id);
-				//ArrayList<Ubicacion> ubicaciones = new ArrayList<Ubicacion>();
-				//ubicaciones.add(ubicacion);
-				_log.error("idevento en Evento doview is> " + evento.getIdevento());
-				//renderRequest.setAttribute("latitud", ubicacion.getLatitud());
+				evento = servicio.get(id);				
+				_log.error("idevento en Evento render phase is> " + evento.getIdevento());
 				renderRequest.setAttribute("evento", evento);
 			}else
 				renderRequest.setAttribute("descripcion", "waiting for response");

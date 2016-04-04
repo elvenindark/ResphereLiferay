@@ -38,7 +38,7 @@ public class ListEventosPortlet extends MVCPortlet {
 		//UbicacionFacadeREST servicio = new UbicacionFacadeREST(Ubicacion.class, url);
 		List<Eventov> eventos = servicio.getAll();
 		//List<Ubicacion> ubicaciones = servicio.getAll();
-		_log.error("eventos are> " + eventos.get(0).getEvento());;
+		_log.info("list eventos do view");
 		renderRequest.setAttribute("itemlist", eventos);
 		super.doView(renderRequest, renderResponse);
 	}
@@ -47,15 +47,15 @@ public class ListEventosPortlet extends MVCPortlet {
 	public void viewDetails(ActionRequest request, ActionResponse response){
 		String id = null;
 		id = (String)request.getParameter("search");
-		_log.error("idevento en action is> " + id);
+		_log.info("idevento en listeventos.jsp action is> " + id);
 		QName qName = new QName("http://liferay.com/events","ipc.pitch");		
 		response.setEvent(qName, id);
-		QName qName2 = new QName("http://liferay.com/events","ipc.pitch2");		
+		/*QName qName2 = new QName("http://liferay.com/events","ipc.pitch2");		
 		response.setEvent(qName2, id);
 		QName qName3 = new QName("http://liferay.com/events","ipc.pitch3");		
 		response.setEvent(qName3, id);
 		QName qName4 = new QName("http://liferay.com/events","ipc.pitch4");		
-		response.setEvent(qName4, id);
+		response.setEvent(qName4, id);*/
 		
 		try {
 			response.sendRedirect("/web/resphere/evaluacion");			

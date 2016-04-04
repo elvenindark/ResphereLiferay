@@ -9,17 +9,17 @@
 	
 </aui:model-context>
 <aui:layout>
-<aui:column columnWidth="20">
-		<aui:input name="fecha" disabled="true" type="text" />
+<aui:column columnWidth="15">
+		<aui:input name="fecha" label="Fecha" disabled="true" type="text" />
 	</aui:column>
-	<aui:column columnWidth="20">
-		<aui:input name="hora"  disabled="true" type="text"/>
+	<aui:column columnWidth="15">
+		<aui:input name="hora" label="Hora" disabled="true" type="text" />
 	</aui:column>
-	<aui:column columnWidth="20">
-		<aui:input name="descripcion" disabled="true" type="text" />
+	<aui:column columnWidth="35">
+		<aui:input name="descripcion" label="Descripción" disabled="true" type="textarea" rows="2" />
 	</aui:column>
-	<aui:column columnWidth="20">
-		<aui:input name="amenazas" disabled="true" type="text" />
+	<aui:column columnWidth="35">
+		<aui:input name="amenazas" label="Amenazas" disabled="true" type="textarea" rows="2" />
 	</aui:column>
 </aui:layout>
 

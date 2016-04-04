@@ -44,10 +44,8 @@ public class UbicacionPortlet extends MVCPortlet {
 			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.ubicacion";
 			UbicacionFacadeREST servicio = new UbicacionFacadeREST(Ubicacion.class, url);
 			Ubicacion ubicacion = new Ubicacion();
-			ubicacion = servicio.get(id);
-			//ArrayList<Ubicacion> ubicaciones = new ArrayList<Ubicacion>();
-			//ubicaciones.add(ubicacion);
-			_log.error("idevento en Ubicacion is> " + ubicacion.getIdevento());
+			ubicacion = servicio.get(id);			
+			_log.info("idevento en Ubicacion view is> " + ubicacion.getIdevento());
 			//renderRequest.setAttribute("latitud", ubicacion.getLatitud());
 			renderRequest.setAttribute("ubicacion", ubicacion);
 		}else

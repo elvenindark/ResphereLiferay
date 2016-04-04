@@ -774,6 +774,9 @@
 		<security-role-ref>
 			<role-name>user</role-name>
 		</security-role-ref>
+		<supported-processing-event>
+            <qname xmlns:x="http://liferay.com/events">x:ipc.pitch4</qname>
+        </supported-processing-event>
 	</portlet>
 	<portlet>
 		<portlet-name>monitoreo</portlet-name>

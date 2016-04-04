@@ -33,15 +33,15 @@ public class EquipoPortlet extends MVCPortlet {
 			EquipovFacadeREST servicio = new EquipovFacadeREST(Equipov.class, url);
 			List<Equipov> equipos = servicio.getAllById(id);
 			if(equipos!=null){
-				renderRequest.setAttribute("itemlisteq", equipos);
-				super.doView(renderRequest, renderResponse);
+				_log.info("equipos en view> " + equipos.size());
+				renderRequest.setAttribute("itemlisteq", equipos);				
 			}else{
-				_log.error("equipos es null");
-				super.doView(renderRequest, renderResponse);
+				_log.error("equipos es null");				
 			}
 		}else{
 			_log.error("equipos ERROR ID");
 		}
+		super.doView(renderRequest, renderResponse);
 	}
 	
 	@ProcessEvent(qname="{http://liferay.com/events}ipc.pitch4")

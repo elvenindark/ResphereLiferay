@@ -1,6 +1,9 @@
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 <%@ include file="/html/init.jsp" %>
 
+<aui:fieldset label="Eventos registrados">		
+</aui:fieldset>
+
 <liferay-ui:search-container emptyResultsMessage="No existen eventos" delta="10">	
 	<liferay-ui:search-container-results>
 	<% 	List<Eventov> tempResults = (List<Eventov>)request.getAttribute("itemlist"); 

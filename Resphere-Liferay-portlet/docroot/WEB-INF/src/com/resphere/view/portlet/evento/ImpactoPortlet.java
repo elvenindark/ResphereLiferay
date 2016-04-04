@@ -34,9 +34,7 @@ public class ImpactoPortlet extends MVCPortlet {
 			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.impactov";
 			ImpactovFacadeREST servicio = new ImpactovFacadeREST(Impactov.class, url);
 			List<Impactov> impactos = servicio.getAllById(id);
-			if(impactos != null){
-				for(Impactov item: impactos)
-					System.out.println(item);
+			if(impactos != null){				
 				renderRequest.setAttribute("itemlisti", impactos);
 				super.doView(renderRequest, renderResponse);
 			}else{

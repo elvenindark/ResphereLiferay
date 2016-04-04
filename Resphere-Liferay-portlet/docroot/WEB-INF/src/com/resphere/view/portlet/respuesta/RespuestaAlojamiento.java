@@ -171,7 +171,7 @@ public class RespuestaAlojamiento extends MVCPortlet {
 			_log.error("error respuesta");
 		}
 		
-		actionResponse.setRenderParameter("jspPage", "/html/respuestaagua/dialog.jsp");
+		actionResponse.setRenderParameter("jspPage", "/html/respuestaalojamiento/dialog.jsp");
 	}
 	
 	 public void respuestaDetails(ActionRequest actionRequest, ActionResponse actionResponse)throws IOException, PortletException, PortalException, SystemException{
@@ -211,7 +211,7 @@ public class RespuestaAlojamiento extends MVCPortlet {
 			actionRequest.setAttribute("idevento", id);		
 			actionRequest.setAttribute("evento", evento);
 			actionRequest.setAttribute("lugar", lugar);
-			actionResponse.setRenderParameter("jspPage", "/html/respuestaagua/edit.jsp");	  
+			actionResponse.setRenderParameter("jspPage", "/html/respuestaalojamiento/edit.jsp");	  
 		 } 
 	
 	 public void respuestaDetailsOld(ActionRequest actionRequest, ActionResponse actionResponse)throws IOException, PortletException, PortalException, SystemException{
@@ -269,7 +269,7 @@ public class RespuestaAlojamiento extends MVCPortlet {
 			else
 				_log.error("error al traer normas");		
 			
-			actionResponse.setRenderParameter("jspPage", "/html/respuestaagua/edit.jsp");
+			actionResponse.setRenderParameter("jspPage", "/html/respuestaalojamiento/edit.jsp");
 		  
 		 } 
 

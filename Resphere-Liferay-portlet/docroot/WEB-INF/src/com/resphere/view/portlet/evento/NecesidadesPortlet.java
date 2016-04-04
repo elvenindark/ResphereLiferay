@@ -38,19 +38,22 @@ public class NecesidadesPortlet extends MVCPortlet {
 			String urlnrh = "http://localhost:8080/respherers/webresources/com.resphere.server.model.nrrhhv";
 			String urlnru = "http://localhost:8080/respherers/webresources/com.resphere.server.model.nrecuperacionv";
 			NurgentevFacadeREST servicionu = new NurgentevFacadeREST(Nurgentev.class, urlnu);
-			NrrhhvFacadeREST servicionrh = new NrrhhvFacadeREST(Nrrhhv.class, urlnrh);
-			NrecuperacionvFacadeREST servicionru = new NrecuperacionvFacadeREST(Nrecuperacionv.class, urlnru);
 			List<Nurgentev> nurgentes = servicionu.getAllById(id);
-			List<Nrecuperacionv> nrecuperaciones = servicionru.getAllById(id);
-			List<Nrrhhv> nrrhhs = servicionrh.getAllById(id);
+			
 			if(nurgentes!=null)
 				renderRequest.setAttribute("itemlistnu", nurgentes);
 			else
 				_log.error("nurgentes es null");
+			
+			NrecuperacionvFacadeREST servicionru = new NrecuperacionvFacadeREST(Nrecuperacionv.class, urlnru);			
+			List<Nrecuperacionv> nrecuperaciones = servicionru.getAllById(id);
 			if(nrecuperaciones!=null)
 				renderRequest.setAttribute("itemlistnru", nrecuperaciones);
 			else
 				_log.error("nrecuperaciones es null");
+			
+			NrrhhvFacadeREST servicionrh = new NrrhhvFacadeREST(Nrrhhv.class, urlnrh);
+			List<Nrrhhv> nrrhhs = servicionrh.getAllById(id);
 			if(nrrhhs!=null)
 				renderRequest.setAttribute("itemlistnrh", nrrhhs);
 			else

@@ -10,20 +10,20 @@
 </aui:model-context>
 <aui:layout>
 <aui:column columnWidth="20">
-		<aui:input name="danoparcialh" label="Dano parcial habitable" type="text" />
+		<aui:input name="danoparcialh" disabled="true" label="Dano parcial habitable" type="text" />
 	</aui:column>
 	<aui:column columnWidth="20">
 		<aui:input name="danototalnh" label="Dano total no habitable" disabled="true" type="text"/>
 	</aui:column>
 	<aui:column columnWidth="20">
-		<aui:input name="temporalnh" label="Temporal no habitable" type="text" />
+		<aui:input name="temporalnh" disabled="true" label="Temporal no habitable" type="text" />
 	</aui:column>
 	<aui:column columnWidth="20">
-		<aui:input name="totalv" label="Total Viviendas" type="text" />
+		<aui:input name="totalv" disabled="true" label="Total Viviendas" type="text" />
 	</aui:column>
 </aui:layout>
 <aui:layout>	
-	<aui:column columnWidth="20">
+	<aui:column columnWidth="60">
 		<aui:input name="observacion"  label="Observacion" disabled="true" type="text"/>
 	</aui:column>	
 </aui:layout>

@@ -34,9 +34,7 @@ public class SaludPortlet extends MVCPortlet {
 			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.saludv";
 			SaludvFacadeREST servicio = new SaludvFacadeREST(Saludv.class, url);
 			List<Saludv> saluds = servicio.getAllById(id);
-			if(saluds!=null){
-				for(Saludv item: saluds)
-					System.out.println(item);
+			if(saluds!=null){					
 				renderRequest.setAttribute("itemlistsa", saluds);
 				super.doView(renderRequest, renderResponse);
 			}else{

@@ -37,7 +37,7 @@
 	        <liferay-ui:search-container-column-text name="Descripcion" property="descripcion" />
 	        <liferay-ui:search-container-column-text name="Organizacion" property="organizacion" />
 	        <liferay-ui:search-container-column-text name="Hogares" property="hogares" />
-	        <liferay-ui:search-container-column-text name="Personas" property="Personas" />
+	        <liferay-ui:search-container-column-text name="Personas" property="personas" />
 	</liferay-ui:search-container-row>
 	<liferay-ui:search-iterator />
 </liferay-ui:search-container>

@@ -22,14 +22,14 @@
 </liferay-ui:search-container>
 
 <liferay-ui:search-container emptyResultsMessage="No existen datos" delta="5">	
-	<liferay-ui:search-container-results>
+	<liferay-ui:search-container-results >
 	<% 	List<Nrecuperacionv> tempResults = (List<Nrecuperacionv>)request.getAttribute("itemlistnru"); 
 		results = ListUtil.subList(tempResults, searchContainer.getStart(),searchContainer.getEnd());
 		total = tempResults.size();
 		pageContext.setAttribute("results", results);
 		pageContext.setAttribute("total", total);
 	%>
-	</liferay-ui:search-container-results>
+	</liferay-ui:search-container-results >
 		<liferay-ui:search-container-row className="com.resphere.server.model.Nrecuperacionv" keyProperty="idevento" modelVar="nrecuperacion">
 			<portlet:actionURL name="viewDetails" var="leaveApplicationURL">            
 	            <portlet:param name="search" value='<%=String.valueOf(nrecuperacion.getIdevento())%>'/>
@@ -49,11 +49,11 @@
 		pageContext.setAttribute("results", results);
 		pageContext.setAttribute("total", total);
 	%>
-	</liferay-ui:search-container-results>
+	</liferay-ui:search-container-results >
 		<liferay-ui:search-container-row className="com.resphere.server.model.Nrrhhv" keyProperty="idevento" modelVar="nrrhh">
 			<portlet:actionURL name="viewDetails" var="leaveApplicationURL">            
 	            <portlet:param name="search" value='<%=String.valueOf(nrrhh.getIdevento())%>'/>
-	            <liferay-ui:search-container-column-text name="Tipo RRHH" property="tiponrrhhr" />
+	            <liferay-ui:search-container-column-text name="Tipo RRHH" property="tiponrrhh" />
 				<liferay-ui:search-container-column-text name="Aplica" property="aplica" />
 				<liferay-ui:search-container-column-text name="Requerimiento" property="requerimiento" />
 	        </portlet:actionURL>

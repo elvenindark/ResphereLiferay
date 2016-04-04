@@ -6,7 +6,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 
-<%//List<Ubicacion> tempResults = (List<Ubicacion>)request.getAttribute("itemlist"); %>
 <%List<Eventosv> tempResults1 = (List<Eventosv>)request.getAttribute("itemliste"); %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,8 +13,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Eventos</title>
-<script
-    src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+
 <script>
 
 var map;
@@ -27,15 +26,7 @@ function initialize() {
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
    	
-  <%-- var html = '<portlet:actionURL name = "eventoDetail" var = "ideventoURL">'+
-	'<portlet:param name = "search" value = "<%=tempResults.get(0).getIdevento()%>"></portlet:param>' +
-	'</portlet:actionURL>'+
-	'<a href="<%=ideventoURL.toString()%>"> Ver info </a>'+
-	'<%int j = 0;%>'+'<b>' + 
-	' Evento' + '</b> <br/>'; --%>
- /*  var infowindow = new google.maps.InfoWindow({ 
-		content: html	    
-	  }); */
+ 
 
   <%for(int i = 0; i < tempResults1.size(); i++){
   	  %>	var marker<%=i%> = new google.maps.Marker({
@@ -47,7 +38,9 @@ function initialize() {
 	'<portlet:param name = "search" value = "<%=tempResults1.get(i).getIdevento()%>"></portlet:param>' +
 	'</portlet:actionURL>'+
 	'<a href="<%=ideventoURL.toString()%>"> ' + '<%=tempResults1.get(i).getParroquia()%>' + ' </a>'+
-	'<b>' + '<%=tempResults1.get(i).getEvento()%>' + '</b> <br/>';
+	'<br/><b>' + '<%=tempResults1.get(i).getEvento()%>' + '</b>' +
+	'<br/>PROVINCIA: ' + '<%=tempResults1.get(i).getProvincia()%>' + 
+	'<br/>CANTON: ' + '<%=tempResults1.get(i).getCanton()%>';
 	var infowindow<%=i%> = new google.maps.InfoWindow({ 
 		content: html<%=i%>,	
 		closeBoxMargin: "10px 2px 2px 2px",
@@ -65,6 +58,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </head>
 <body>
- <div id="map-canvas" style="height:450px; width:750px"></div>
+<aui:fieldset label="Eventos registrados">		
+</aui:fieldset>
+ <div id="map-canvas" style="height:450px; width:100%"></div>
 </body>
 </html>

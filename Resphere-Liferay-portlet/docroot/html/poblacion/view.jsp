@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
 <%@ include file="/html/init.jsp" %>
 <portlet:defineObjects />
-<liferay-ui:search-container emptyResultsMessage="No existen datos" delta="5">	
+<liferay-ui:search-container emptyResultsMessage="No existen datos" delta="10">	
 	<liferay-ui:search-container-results>
 	<% 	List<Poblacionv> tempResults = (List<Poblacionv>)request.getAttribute("itemlistp"); 
 		results = ListUtil.subList(tempResults, searchContainer.getStart(),searchContainer.getEnd());
@@ -23,5 +23,5 @@
 			<liferay-ui:search-container-column-text name="Personas" property="personas" />
 					
 	</liferay-ui:search-container-row>
-	<liferay-ui:search-iterator />
+	<liferay-ui:search-iterator paginate="false"/>
 </liferay-ui:search-container>

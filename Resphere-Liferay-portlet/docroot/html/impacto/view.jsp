@@ -10,10 +10,11 @@
 		pageContext.setAttribute("total", total);
 	%>
 	</liferay-ui:search-container-results>
-		<liferay-ui:search-container-row className="com.resphere.server.model.Impactov" keyProperty="idevento" modelVar="impacto">
+	<liferay-ui:search-container-row className="com.resphere.server.model.Impactov" keyProperty="idevento" modelVar="impacto">
 			<portlet:actionURL name="viewDetails" var="leaveApplicationURL">            
 	            <portlet:param name="search" value='<%=String.valueOf(impacto.getIdevento())%>'/>
 	        </portlet:actionURL>
+	        <liferay-ui:search-container-column-text name="Nivel" property="idtipoimpacto" />
 			<liferay-ui:search-container-column-text name="Descripcion" property="descripcion" />
 			
 	</liferay-ui:search-container-row>

@@ -1,6 +1,7 @@
 package com.resphere.view.portlet.evento;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.portlet.Event;
 import javax.portlet.EventRequest;
@@ -30,24 +31,20 @@ public class ViviendaPortlet extends MVCPortlet {
 		renderRequest.setAttribute("idevento", id);
 		if(this.id != null){
 			String url = "http://localhost:8080/respherers/webresources/com.resphere.server.model.vivienda";
-			ViviendaFacadeREST servicio = new ViviendaFacadeREST(Vivienda.class, url);
-			Vivienda item = servicio.get(id);
-			if(item != null){
-				renderRequest.setAttribute("vivienda", item);
-				super.doView(renderRequest, renderResponse);
-			}
-			else{
-				renderRequest.setAttribute("itemv", item);
-				super.doView(renderRequest, renderResponse);
-			}
+			ViviendaFacadeREST servicio = new ViviendaFacadeREST(Vivienda.class, url);	
+			Vivienda vivienda = new Vivienda();
+			vivienda = servicio.get(id.trim());
+			_log.info("idevento en Vivienda view is> " + id);
+			renderRequest.setAttribute("vivienda", vivienda);			
 		}
+		super.doView(renderRequest, renderResponse);
 	}
 	
-	@ProcessEvent(qname="{http://liferay.com/events}ipc.pitch3")
+	@ProcessEvent(qname="{http://liferay.com/events}ipc.pitch4")
 	public void viviendaDetail(EventRequest request, EventResponse response){
 		Event event = request.getEvent();
 		String idevento = (String)event.getValue();
-		_log.error("idevento en Vivienda is> " + idevento);
+		_log.info("idevento en Vivienda is> " + idevento);
 		response.setRenderParameter("idevento", idevento);
 		this.id = idevento;		
 	}
